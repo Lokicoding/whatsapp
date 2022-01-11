@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+	<?php 
+		$SESSION_start();
+	?>
+		<title>
+		</title>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+	</head>
+	<body>
+		<div class="main_div">
+			<div id="edit_profile">
+				<div class="back_header">
+					<div class="extra_space_div"></div>
+					<div class="back_option_div">
+						<div class="back_button_div"><i class="fas fa-arrow-left" id="back_btn"></i></div>
+						<div class="profile_heading"><h2>Profile</h2></div>
+					</div>
+				</div>
+				
+				<div class="big_profile_div">
+					<img id="set_dp" src="img/img1.jpg">
+				</div>
+				
+				<div class="set_name_div">
+					<div class="name_lable"><h4>Your Name</h4></div>
+					<div class="user_name"><h2 id="user_name">Prince</h2></div>
+				</div>
+			</div>
+			
+			
+			<div class="chat_div">
+				<div class="header">
+					<div id="profile_dp" class="profile_div"><img src="img/img1.jpg"></div>
+					<h2 id="login_user">princedvfawfgsw<?php echo $SESSION['user_name']; ?></h2>
+					<div class="hide_chat"><button id="hide_chat">Hide chat</button></div>
+				</div>
+				<div class="search_bar">
+					<input class="input" type="text" placeholder="Search or Start new Chat">
+				</div>
+				<div class="main_chat_div">
+					<div class="user_chat">
+						<div id="user_dp_div"> <img id="user_dp" src="img/img1.jpg"></div>
+						
+						<div class="user_msg_div">
+							<div id="user_name"><p id="name">Prince</p></div>
+							<div id="recent_msg"><p id="msg">yeh bro how are you</p></div>
+						</div>
+						
+						<div id="msg_time"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="msg_div">
+				<div class="user_header_div">
+					<div class="user_profile_div">
+						<img src="img/img1.jpg">
+					</div>
+					<div class="user_name_div">
+						<p>Prince</p>
+					</div>
+				</div>
+				
+				<div class="chat_box_div">
+					<div class="chat_box">
+						<div id="righ_msg">
+							<p>hello</p>
+						</div><br>
+						
+						<div id="left_msg">
+							<p>hii bro</p>
+						</div>
+					</div>
+					<div class="msg_input_div">
+						<div class="msg_input">
+							<input id="input_msg" type="text" placeholder="Type a message">
+						</div>
+						<div class="button_div">
+							<button id="send_btn">Send</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-3.5.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$('#profile_dp').click(function(){	
+					$('#edit_profile').css("display","block");
+					$('#edit_profile').css("width","30%");
+					$('.back_button_div').css("display","block");
+					$('.back_button_div').css("display","flex");
+					$('.profile_heading').css("display","block");
+					$('.profile_heading').css("display","flex");
+					$('.set_name_div').css("display","block");
+				});
+				
+				$('#back_btn').click(function(){
+					$('#edit_profile').css("width","0%");
+					$('.profile_heading').css("display","none");
+					$('.back_button_div').css("display","none");
+					$('.set_name_div').css("display","none");
+				});
+				
+				$('.user_chat').click(function(){
+					$('.msg_div').css("display","block");
+					$('.hide_chat').css("display","block");
+					$('.hide_chat').css("display","flex");
+				});
+				
+				$('#hide_chat').click(function(){
+					$('.msg_div').css("display","none");
+					$('.hide_chat').css("display","none");
+				});
+			});
+		</script>
+	</body>
+</html>
